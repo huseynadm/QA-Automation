@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - '*'
+      - 'self-hosted'
 
 jobs:
   build-and-push:
