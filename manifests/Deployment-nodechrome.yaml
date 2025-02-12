@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: selenium-node-chrome
-          image: DOCKER_IMAGE
+          image: selenium/node-firefox
           imagePullPolicy: Always
           env:
             - name: SE_EVENT_BUS_HOST
