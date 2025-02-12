@@ -13,7 +13,9 @@ env:
   ECR_REPOSITORY: huseyn01/qa-test-automation
   AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
-  TAG: latest
+  APP_TAG: app
+  NODE_TAG: node
+  HUB_TAG: hub
   IMAGE_FULL_NAME: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
   CLUSTER_NAME: qa-eks-new
 
@@ -44,11 +46,13 @@ jobs:
       - name: Build, tag, and push Docker image
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
+          docker build -f Dockerfile.app -t $REGISTRY/$ECR_REPOSITORY:$APP_TAG
+          docker push $REGISTRY/$ECR_REPOSITORY:$APP_TAG
+          docker build -f Dockerfile.hub -t $REGISTRY/$ECR_REPOSITORY:$HUB_TAG
+          docker push $REGISTRY/$ECR_REPOSITORY:$HUB_TAG
+          docker build -f Dockerfile.app -t $REGISTRY/$ECR_REPOSITORY:$NODE_TAG
+          docker push $REGISTRY/$ECR_REPOSITORY:$NODE_TAG
 
   Deploy-EKS:
     runs-on: ubuntu-latest
@@ -78,8 +82,6 @@ jobs:
         run: aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_REGION
 
       - name: Deploy to EKS
-        env:
-          IMAGE_TAG: ${{ github.sha }}
         run: |
           kubectl create namespace automation --dry-run=client -o yaml | kubectl apply -f -
           kubectl apply -f manifests/ -n automation
