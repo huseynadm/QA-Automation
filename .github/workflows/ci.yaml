@@ -52,6 +52,7 @@ jobs:
 
   Deploy-EKS:
     runs-on: ubuntu-latest
+    needs: Build-and-Push-ECR
 
     steps:
 
@@ -65,7 +66,7 @@ jobs:
           aws --version  # Verify installation
           
       - name: Update kube config
-        run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+        run: aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_REGION
 
       - name: Deploy to EKS
         env:
