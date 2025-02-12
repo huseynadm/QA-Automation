@@ -8,10 +8,12 @@ on:
       - '*'
 
 env:
+  AWS_ACCESS_KEY_ID: AKIA5MX4PTDN3LL2WWUE
+  AWS_SECRET_ACCESS_KEY : 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
   AWS_ACCOUNT_ID: 920726247643
   AWS_REGION: us-west-1
   ECR_REPOSITORY: huseyn01/qa-test-automation
-#  AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
+  AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
   TAG: latest
   IMAGE_FULL_NAME: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
