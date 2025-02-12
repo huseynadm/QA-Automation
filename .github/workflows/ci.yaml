@@ -47,11 +47,11 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
-          docker build -f Dockerfile.app -t $AWS_REPOSITORY:$APP_TAG
+          docker build -f Dockerfileapp -t $AWS_REPOSITORY:$APP_TAG
           docker push $AWS_REPOSITORY:$APP_TAG
-          docker build -f Dockerfile.hub -t $AWS_REPOSITORY:$HUB_TAG
+          docker build -f Dockerfilehub -t $AWS_REPOSITORY:$HUB_TAG
           docker push $AWS_REPOSITORY:$HUB_TAG
-          docker build -f Dockerfile.app -t $AWS_REPOSITORY:$NODE_TAG
+          docker build -f Dockerfileapp -t $AWS_REPOSITORY:$NODE_TAG
           docker push $AWS_REPOSITORY:$NODE_TAG
 
   Deploy-EKS:
