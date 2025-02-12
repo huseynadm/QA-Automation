@@ -18,6 +18,8 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    container:
+      image: gcr.io/kaniko-project/executor:debug
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -25,31 +27,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
-
-      - name: Log in to Amazon ECR
-        id: login-ecr
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ env.AWS_REPOSITORY }}
-          username: AWS
-          password: ${{ steps.login-ecr.outputs.docker_password }}
-
-      - name: Get ECR login password
-        id: get-ecr-password
-        run: |
-          PASSWORD=$(aws ecr get-login-password --region ${{ secrets.AWS_REGION }})
-          echo "docker_password=$PASSWORD" >> $GITHUB_OUTPUT
-
       - name: Build and push Docker image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ env.AWS_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
+        uses: imjasonh/setup-kaniko@v0.7
+
+      - run: |
+          echo "{\"credsStore\":\"ecr-login\",\"credHelpers\":{\"$AWS_REPOSITORY\":\"ecr-login\"}}" > /kaniko/.docker/config.json
+          /kaniko/executor --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile --destination $AWS_REPOSITORY:$CI_COMMIT_TAG
+
+
+
