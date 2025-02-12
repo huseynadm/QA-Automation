@@ -8,7 +8,7 @@ on:
 env:
   ECR_REPOSITORY: huseyn01/qa-test-automation
   EKS_CLUSTER_NAME: qa-eks-new
-  AWS_REGION: us-wast-1
+  AWS_REGION: us-west-1
 
 jobs:
   
