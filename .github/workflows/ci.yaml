@@ -1,58 +1,67 @@
-name: Deploy to ECR
+name: CI/CD Pipeline
 
 on:
- 
   push:
-    branches: [ main ]
+    branches:
+      - 'main'
+    tags:
+      - '*'
 
 env:
-  ECR_REPOSITORY: huseyn01/qa-test-automation
-  EKS_CLUSTER_NAME: qa-eks-new
+  AWS_ACCOUNT_ID: 920726247643
   AWS_REGION: us-west-1
+  ECR_REPOSITORY: huseyn01/qa-test-automation
+  AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
+  IMAGE_NAME: automation-app
+  TAG: latest
+  IMAGE_FULL_NAME: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
+  CLUSTER_NAME: qa-eks-new
+
 
 jobs:
-  
-  build:
-    
-    name: Deployment
+  Build-and-Push-ECR:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set short git commit SHA
-      id: commit
-      uses: prompt/actions-commit-hash@v2
+      # Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
 
-    - name: Check out code
-      uses: actions/checkout@v2
+      # Login to Amazon ECR
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      # Build, tag, and push the Docker image
+      - name: Build, tag, and push Docker image
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+
+  Deploy-EKS:
+    runs-on: ubuntu-latest
+
+    steps:
     
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{env.AWS_REGION}}
+      - name: Update kube config
+        run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
 
-    - name: Login to Amazon ECR
-      id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1
-
-    - name: Build, tag, and push image to Amazon ECR
-      env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
-        IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f docker/Dockerfile .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-    - name: Update kube config
-      run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
-
-    - name: Deploy to EKS
-      env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
-        IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      run: |
-        sed -i.bak "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" manifests/hello-app-deployment.yaml && \
-        kubectl create namespace automation --dry-run=client -o yaml | kubectl apply -f -
-        kubectl apply -f manifests/ -n automation
+      - name: Deploy to EKS
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}   
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          kubectl create namespace automation --dry-run=client -o yaml | kubectl apply -f -
+          kubectl apply -f manifests/ -n automation
