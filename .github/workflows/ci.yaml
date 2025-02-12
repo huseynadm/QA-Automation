@@ -50,7 +50,6 @@ jobs:
         run: |
           docker build -t $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push $REGISTRY/$ECR_REPOSITORY:latest
 
   deploy-eks:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
