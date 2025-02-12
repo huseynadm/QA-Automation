@@ -15,8 +15,8 @@ spec:
         app: selenium-automation
     spec:
       containers:
-        - name: selenium-test
-          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
+        - name: selenium-app
+          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:${{ github.sha }}
           imagePullPolicy: Always
           resources:
             requests:
