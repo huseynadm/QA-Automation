@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: selenium-hub
-          image: selenium/hub:latest
+          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:${HUB_TAG}
           env:
             - name: SE_GRID_TIMEOUT
               value: "300"
