@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: selenium-node-chrome
-	  image: DOCKER_IMAGE
+          image: DOCKER_IMAGE
           env:
             - name: SE_EVENT_BUS_HOST
               value: "selenium-hub"
