@@ -8,4 +8,4 @@ ENV SE_GRID_MAX_SEESION_WAIT_TIMEOUT=30000
 EXPOSE 4444 4443 4442
 
 # Set the default command to run the Selenium Hub
-CMD ["selenium-hub"]
+CMD ["selenium-grid-hub"]
