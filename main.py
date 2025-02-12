@@ -6,7 +6,17 @@ from selenium.webdriver.support.ui import Select  # Import the Select class
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-def get_remote_driver():
+# def get_headless_driver():
+#     options = Options()
+#     options.add_argument("--headless")
+#     options.add_argument("--disable-gpu")
+#     options.add_argument("--no-sandbox")
+#     options.add_argument("--disable-dev-shm-usage")
+#     return webdriver.Chrome(options=options)
+
+
+def get_headless_driver():
+
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -17,23 +27,24 @@ def get_remote_driver():
     driver = webdriver.Remote(command_executor=grid_url, options=options)
     return driver
 
+
 def test_homepage():
     driver = None
     try:
-        driver = get_remote_driver()
+        driver = get_headless_driver()
         driver.get("https://useinsider.com/")
         assert "Insider" in driver.title
         print("TEST PASSED: Homepage loaded successfully")
     except Exception as e:
         print(f"TEST FAILED: Homepage - {e}")
     finally:
-        if driver:
-            driver.quit()
+        driver.quit()
+
 
 def test_careers_page():
     driver = None
     try:
-        driver = get_remote_driver()
+        driver = get_headless_driver()
         driver.get("https://useinsider.com/")
 
         company_menu = WebDriverWait(driver, 10).until(
@@ -55,14 +66,16 @@ def test_careers_page():
     except Exception as e:
         print(f"TEST FAILED: Careers page - {e}")
     finally:
-        if driver:
-            driver.quit()
+        driver.quit()
+
+
+
 
 def test_qa_jobs_page():
     driver = None
     try:
-        # Initialize the remote driver
-        driver = get_remote_driver()
+        # Initialize the headless driver
+        driver = get_headless_driver()
         driver.get("https://useinsider.com/careers/quality-assurance/")
 
         # Handle the cookie consent banner if it exists
