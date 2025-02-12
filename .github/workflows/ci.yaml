@@ -11,7 +11,7 @@ env:
   AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
   TAG: latest
-  IMAGE_FULL_NAME: ${{ env.AWS_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}
+  IMAGE_FULL_NAME: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
   CLUSTER_NAME: qa-eks-new
 
 jobs:
