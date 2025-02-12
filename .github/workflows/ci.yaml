@@ -8,6 +8,7 @@ on:
       - '*'
 
 env:
+  AWS_REGION: us-west-1
   AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
   TAG: latest
