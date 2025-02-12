@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: selenium-node-chrome
-          image: selenium/node-chrome-debug:latest
+          image: selenium/node-chrome:dev
           imagePullPolicy: Always
           env:
             - name: SE_EVENT_BUS_HOST
