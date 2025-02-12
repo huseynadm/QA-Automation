@@ -10,29 +10,41 @@ on:
 env:
   AWS_ACCOUNT_ID: 920726247643
   AWS_REGION: us-west-1
-  AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
+  ECR_REPOSITORY: huseyn01/qa-test-automation
+#  AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
   TAG: latest
   IMAGE_FULL_NAME: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
   CLUSTER_NAME: qa-eks-new
+
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build --tag 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation .
-
-      - name: Push to ECR
-        id: ecr
-        uses: jwalton/gh-ecr-push@v2
+      # Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: us-west-1
-          local-image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
-          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Login to Amazon ECR
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      # Build, tag, and push the Docker image
+      - name: Build, tag, and push Docker image
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
