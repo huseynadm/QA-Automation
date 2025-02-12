@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: selenium-hub
-	  image: DOCKER_IMAGE
+          image: DOCKER_IMAGE
+          imagePullPolicy: Always
           env:
             - name: SE_GRID_TIMEOUT
               value: "300"
