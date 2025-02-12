@@ -8,6 +8,7 @@ on:
       - '*'
 
 env:
+  AWS_ACCOUNT_ID: 920726247643
   AWS_REGION: us-west-1
   AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
@@ -18,25 +19,20 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    container:
-      image: gcr.io/kaniko-project/executor:debug
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build and push Docker image using Kaniko
+      - name: Build, tag, and push Docker image to Amazon ECR
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: my-ecr-repo
+          IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker run --rm \
-            -v $(pwd):/workspace \
-            -v /kaniko/.docker:/kaniko/.docker \
-            -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
-            -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
-            gcr.io/kaniko-project/executor:debug \
-            --context /workspace \
-            --dockerfile /workspace/Dockerfile \
-            --destination ${{ secrets.AWS_REPOSITORY }}:${{ github.sha }}
-
-
+          docker build -t $AWS_REPOSITORY:$TAG .
+          docker push $AWS_REPOSITORY:$TAG
