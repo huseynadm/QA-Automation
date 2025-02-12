@@ -28,8 +28,6 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build and push Docker image
-        uses: imjasonh/setup-kaniko@v0.7
-
       - run: |
           echo "{\"credsStore\":\"ecr-login\",\"credHelpers\":{\"$AWS_REPOSITORY\":\"ecr-login\"}}" > /kaniko/.docker/config.json
           /kaniko/executor --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile --destination $AWS_REPOSITORY:$CI_COMMIT_TAG
