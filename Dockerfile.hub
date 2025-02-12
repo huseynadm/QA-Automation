@@ -1,0 +1,11 @@
+# Use the official Selenium Hub image as the base image
+FROM selenium/hub:4.28.1
+
+ENV SE_GRID_MAX_SEESION=10
+ENV SE_GRID_MAX_SEESION_WAIT_TIMEOUT=30000
+
+# Expose the default Selenium Hub port
+EXPOSE 4444 4443 4442
+
+# Set the default command to run the Selenium Hub
+CMD ["selenium-hub"]

@@ -1,0 +1,9 @@
+# Use the official Selenium Node image with Chrome as the base image
+FROM selenium/node-chrome:97.0-20250202
+
+# Set the Selenium Hub URL as an environment variable
+ENV SE_EVENT_BUS_HOST selenium-hub
+ENV SE_EVENT_BUS_PUBLISH_PORT 4442
+ENV SE_EVENT_BUS_SUBSCRIBE_PORT 4443
+
+EXPOSE 5555
