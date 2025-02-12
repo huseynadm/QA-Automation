@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: selenium-app
-	  image: DOCKER_IMAGE
+          image: DOCKER_IMAGE
           imagePullPolicy: Always
           resources:
             requests:
