@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: selenium-node-chrome
-          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:${NODE_TAG}
+          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:${{ NODE_TAG }}
           env:
             - name: SE_EVENT_BUS_HOST
               value: "selenium-hub"

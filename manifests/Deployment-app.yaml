@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: selenium-app
-          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:${APP_TAG}
+          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:${{ APP_TAG }}
           imagePullPolicy: Always
           resources:
             requests:
