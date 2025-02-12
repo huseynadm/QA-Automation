@@ -27,10 +27,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build and push Docker image
-      - run: |
-          echo "{\"credsStore\":\"ecr-login\",\"credHelpers\":{\"$AWS_REPOSITORY\":\"ecr-login\"}}" > /kaniko/.docker/config.json
-          /kaniko/executor --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile --destination $AWS_REPOSITORY:$CI_COMMIT_TAG
-
+      - name: Build and push Docker image using Kaniko
+        run: |
+          docker run --rm \
+            -v $(pwd):/workspace \
+            -v /kaniko/.docker:/kaniko/.docker \
+            -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+            -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+            gcr.io/kaniko-project/executor:debug \
+            --context /workspace \
+            --dockerfile /workspace/Dockerfile \
+            --destination ${{ secrets.AWS_REPOSITORY }}:${{ github.sha }}
 
 
