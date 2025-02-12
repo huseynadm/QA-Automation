@@ -13,9 +13,9 @@ env:
   ECR_REPOSITORY: huseyn01/qa-test-automation
   AWS_REPOSITORY: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation
   IMAGE_NAME: automation-app
-  APP_TAG: app
-  NODE_TAG: node
-  HUB_TAG: hub
+  APP_TAG: app-$(git rev-parse --short HEAD)
+  NODE_TAG: node-$(git rev-parse --short HEAD)
+  HUB_TAG: hub-$(git rev-parse --short HEAD)
   IMAGE_FULL_NAME: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
   CLUSTER_NAME: qa-eks-new
 
