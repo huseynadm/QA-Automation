@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-hub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: selenium-hub
+  template:
+    metadata:
+      labels:
+        app: selenium-hub
+    spec:
+      containers:
+        - name: selenium-hub
+          image: selenium/hub:latest
+          env:
+            - name: SE_GRID_TIMEOUT
+              value: "300"
+            - name: SE_SESSION_REQUEST_TIMEOUT
+              value: "300"
+          ports:
+            - name: hub-ui
+              containerPort: 4444
+            - name: bus-publish
+              containerPort: 4442
+            - name: bus-subs
+              containerPort: 4443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: selenium-hub
+spec:
+  selector:
+    app: selenium-hub
+  ports:
+    - name: hub-ui
+      protocol: TCP
+      port: 4444
+      targetPort: 4444
+    - name: event-bus-publish
+      protocol: TCP
+      port: 4442
+      targetPort: 4442
+    - name: event-bus-subscribe
+      protocol: TCP
+      port: 4443
+      targetPort: 4443
+  type: ClusterIP

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: automation-app-service
+spec:
+  selector:
+    app: automation-app
+  ports:
+    - protocol: TCP
+      port: 80       # The port on which the service is exposed
+      targetPort: 8080  # The port on which your container listens (change if needed)
+  type: ClusterIP  # Internal service type; use NodePort or LoadBalancer if external access is needed

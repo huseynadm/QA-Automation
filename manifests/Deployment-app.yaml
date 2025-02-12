@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-automation
+  labels:
+    app: selenium-automation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: selenium-automation
+  template:
+    metadata:
+      labels:
+        app: selenium-automation
+    spec:
+      containers:
+        - name: selenium-test
+          image: 920726247643.dkr.ecr.us-west-1.amazonaws.com/huseyn01/qa-test-automation:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          volumeMounts:
+            - name: test-results
+              mountPath: /app/results
+      volumes:
+        - name: test-results
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: selenium-automation-service
+spec:
+  selector:
+    app: selenium-automation
+  ports:
+    - protocol: TCP
+      port: 4444
+      targetPort: 4444
