@@ -24,15 +24,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+      - name: Build Docker image
+        run: docker build --tag my-image .
 
-      - name: Build, tag, and push Docker image to Amazon ECR
-        env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: my-ecr-repo
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build -t $AWS_REPOSITORY:$TAG .
-          docker push $AWS_REPOSITORY:$TAG
+      - name: Push to ECR
+        id: ecr
+        uses: jwalton/gh-ecr-push@v2
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+          local-image: my-image
+          image: my-image:dev-${{ github.sha }}
