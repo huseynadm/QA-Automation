@@ -6,14 +6,6 @@ from selenium.webdriver.support.ui import Select  # Import the Select class
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-# def get_headless_driver():
-#     options = Options()
-#     options.add_argument("--headless")
-#     options.add_argument("--disable-gpu")
-#     options.add_argument("--no-sandbox")
-#     options.add_argument("--disable-dev-shm-usage")
-#     return webdriver.Chrome(options=options)
-
 def get_remote_driver():
     options = Options()
     options.add_argument("--headless")
@@ -21,36 +13,27 @@ def get_remote_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-
     grid_url = "http://selenium-hub:4444/wd/hub"
-
-
     driver = webdriver.Remote(command_executor=grid_url, options=options)
     return driver
 
-
-
-
-
-
-
-
-
 def test_homepage():
+    driver = None
     try:
-        driver = get_headless_driver()
+        driver = get_remote_driver()
         driver.get("https://useinsider.com/")
         assert "Insider" in driver.title
         print("TEST PASSED: Homepage loaded successfully")
     except Exception as e:
         print(f"TEST FAILED: Homepage - {e}")
     finally:
-        driver.quit()
-
+        if driver:
+            driver.quit()
 
 def test_careers_page():
+    driver = None
     try:
-        driver = get_headless_driver()
+        driver = get_remote_driver()
         driver.get("https://useinsider.com/")
 
         company_menu = WebDriverWait(driver, 10).until(
@@ -72,15 +55,14 @@ def test_careers_page():
     except Exception as e:
         print(f"TEST FAILED: Careers page - {e}")
     finally:
-        driver.quit()
-
-
-
+        if driver:
+            driver.quit()
 
 def test_qa_jobs_page():
+    driver = None
     try:
-        # Initialize the headless driver
-        driver = get_headless_driver()
+        # Initialize the remote driver
+        driver = get_remote_driver()
         driver.get("https://useinsider.com/careers/quality-assurance/")
 
         # Handle the cookie consent banner if it exists
@@ -163,8 +145,8 @@ def test_qa_jobs_page():
 
     finally:
         # Close all browser windows
-        driver.quit()
-
+        if driver:
+            driver.quit()
 
 if __name__ == "__main__":
     test_homepage()
