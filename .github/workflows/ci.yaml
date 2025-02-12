@@ -83,8 +83,15 @@ jobs:
 
       - name: Deploy to EKS
         run: |
-	  sed -i "s|DOCKER_IMAGE|$AWS_REPOSITORY:$APP_TAG|g" manifests/Deployment-app.yaml
-	  sed -i "s|DOCKER_IMAGE|$AWS_REPOSITORY:$HUB_TAG|g" manifests/Deployment-hub.yaml
-	  sed -i "s|DOCKER_IMAGE|$AWS_REPOSITORY:$NODE_TAG|g" manifests/Deployment-nodechrome.yaml
           kubectl create namespace automation --dry-run=client -o yaml | kubectl apply -f -
-          kubectl apply -f manifests/ -n automation
+      
+          sed -i "s|DOCKER_IMAGE|$AWS_REPOSITORY:$APP_TAG|g" manifests/Deployment-app.yaml
+          kubectl apply -f manifests/Deployment-app.yaml -n automation
+      
+          sed -i "s|DOCKER_IMAGE|$AWS_REPOSITORY:$HUB_TAG|g" manifests/Deployment-hub.yaml
+          kubectl apply -f manifests/Deployment-hub.yaml -n automation
+      
+          sed -i "s|DOCKER_IMAGE|$AWS_REPOSITORY:$NODE_TAG|g" manifests/Deployment-nodechrome.yaml
+          kubectl apply -f manifests/Deployment-nodechrome.yaml -n automation
+
+
