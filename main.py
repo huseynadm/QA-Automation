@@ -16,7 +16,7 @@ def get_headless_driver():
     options.add_argument("--disable-blink-features=AutomationControlled")  # Prevent bot detection
     options.add_argument("--window-size=1920,1080")  # Ensure proper rendering in headless mode
 
-    grid_url = "http://selenium-hub:4444/wd/hub"  # Ensure this is correct
+    grid_url = "http://localhost:60543/wd/hub"  # Ensure this is correct
     driver = webdriver.Remote(command_executor=grid_url, options=options)
     return driver
 
@@ -112,9 +112,9 @@ def test_qa_jobs_page():
 
             selected_option = select.first_selected_option.text
             assert selected_option == "Istanbul, Turkiye", "❌ Location filter not applied correctly"
-            print("✅ Location filter applied successfully")
+            print("✅ TEST PASSED: Location filter applied successfully")
         except Exception as e:
-            print(f"❌ Failed to apply location filter: {e}")
+            print(f"❌ TEST FAILED: Failed to apply location filter: {e}")
 
         # Click "View Role" button
         try:
