@@ -28,9 +28,9 @@ def test_homepage():
         driver.get("https://useinsider.com/")
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         assert "Insider" in driver.title
-        print("✅ TEST PASSED: Homepage loaded successfully")
+        print("✅ TEST 1 PASSED: Homepage loaded successfully")
     except Exception as e:
-        print(f"❌ TEST FAILED: Homepage - {e}")
+        print(f"❌ TEST 1 FAILED: Homepage - {e}")
     finally:
         if driver:
             driver.quit()
@@ -64,9 +64,9 @@ def test_careers_page():
             EC.presence_of_element_located((By.XPATH, "//h2[contains(text(), 'Life at Insider')]"))
         )
 
-        print("✅ TEST PASSED: Careers page loaded successfully")
+        print("✅ TEST 2 PASSED: Careers page loaded successfully")
     except Exception as e:
-        print(f"❌ TEST FAILED: Careers page - {e}")
+        print(f"❌ TEST 2 FAILED: Careers page - {e}")
     finally:
         if driver:
             driver.quit()
@@ -84,9 +84,9 @@ def test_qa_jobs_page():
                 EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Accept')]"))
             )
             accept_button.click()
-            print("✅ Cookie consent accepted")
+            print("✅ TEST 3 PASSED:  Cookie consent accepted and QA Jobs Loaded successfully ")
         except Exception:
-            print("ℹ️ No cookie banner found or already dismissed")
+            print("❌ TEST 3  FAILED: No cookie banner found or already dismissed")
 
         # Click "See all QA jobs"
         see_all_qa_jobs_link = WebDriverWait(driver, 15).until(
@@ -112,9 +112,9 @@ def test_qa_jobs_page():
 
             selected_option = select.first_selected_option.text
             assert selected_option == "Istanbul, Turkiye", "❌ Location filter not applied correctly"
-            print("✅ TEST PASSED: Location filter applied successfully")
+            print("✅ TEST 4 PASSED: Location filter applied successfully")
         except Exception as e:
-            print(f"❌ TEST FAILED: Failed to apply location filter: {e}")
+            print(f"❌ TEST 4 FAILED: Failed to apply location filter: {e}")
 
         # Click "View Role" button
         try:
@@ -136,9 +136,9 @@ def test_qa_jobs_page():
             # Verify new tab URL
             WebDriverWait(driver, 15).until(EC.url_contains("jobs.lever.co"))
             assert "jobs.lever.co/useinsider" in driver.current_url, "❌ View Role button did not open correct URL"
-            print("✅ View Role button opened the correct URL")
+            print("✅ TEST 5 PASSED: View Role button opened the correct URL")
         except Exception as e:
-            print(f"❌ Failed to click View Role button: {e}")
+            print(f"❌ TEST 5 FAILED: Failed to click View Role button: {e}")
 
     finally:
         if driver:
