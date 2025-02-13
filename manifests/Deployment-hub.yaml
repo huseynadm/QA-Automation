@@ -18,9 +18,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SE_GRID_TIMEOUT
-              value: "300"
+              value: "300000"
             - name: SE_SESSION_REQUEST_TIMEOUT
-              value: "300"
+              value: "300000"
           ports:
             - name: hub-ui
               containerPort: 4444
