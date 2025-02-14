@@ -2,9 +2,14 @@
 # QA Test Automation with Selenium
 
 This repository contains an automated test suite built with Selenium WebDriver to test various pages on a website using headless Chrome. The tests are run using a Selenium Grid with a Selenium Hub and Node setup. This README explains how the tests work, how to communicate with the Selenium Hub and Node, and how the GitHub Actions CI/CD pipeline works.
+
+<img width="1138" alt="app" src="https://github.com/user-attachments/assets/2e5f0dd6-3eba-465b-a926-e4a452e8019e" />
+<img width="1138" alt="nodechrome" src="https://github.com/user-attachments/assets/729f851c-ce5c-4162-96b5-deab00c8c630" />
+<img width="1138" alt="hub" src="https://github.com/user-attachments/assets/beaf40aa-ffa3-403b-91d7-ab6924e99aea" />
+<img width="1138" alt="hpa" src="https://github.com/user-attachments/assets/00876c9b-ac9e-4b1c-b1cb-0fc26b4656ad" />
+
 ![image](https://github.com/user-attachments/assets/f34670f5-3a84-4dbb-8064-10aa243d673a)
 
-![image](https://github.com/user-attachments/assets/e8114ff4-68e7-43ff-b7ca-558d65585050)
 
 
 ## 1. How the Test Case Code Works
