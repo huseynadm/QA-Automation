@@ -56,7 +56,7 @@ spec:
     kind: Deployment
     name: selenium-node-chrome
   minReplicas: 1  
-  maxReplicas: 2  
+  maxReplicas: 2  ## I can't set 5 for resource problem :)
   metrics:
     - type: Resource
       resource:
