@@ -27,11 +27,11 @@ spec:
             - containerPort: 5555
           resources:
             requests:
-              cpu: "250m"  
-              memory: "256Mi" 
+              cpu: "500m"  # Request 0.5 CPU
+              memory: "512Mi"  # Request 512MB memory
             limits:
-              cpu: "500m"  
-              memory: "512Mi"  
+              cpu: "1000m"  # Limit to 1 CPU
+              memory: "1024Mi"  # Limit to 1GB memory 
 ---
 apiVersion: v1
 kind: Service
@@ -63,10 +63,10 @@ spec:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 70 
+          averageUtilization: 80
     - type: Resource
       resource:
         name: memory
         target:
           type: Utilization
-          averageUtilization: 70
+          averageUtilization: 80
