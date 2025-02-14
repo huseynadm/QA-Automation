@@ -1,0 +1,389 @@
+2025-02-14 15:47:43,285 INFO Included extra file "/etc/supervisor/conf.d/selenium-grid-hub.conf" during parsing
+2025-02-14 15:47:43,291 INFO RPC interface 'supervisor' initialized
+2025-02-14 15:47:43,292 INFO supervisord started with pid 8
+2025-02-14 15:47:44,298 INFO spawned: 'selenium-grid-hub' with pid 9
+Starting Selenium Grid Hub...
+2025-02-14 15:47:44,312 INFO success: selenium-grid-hub entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+Appending Selenium option: --log-level INFO
+Appending Selenium option: --http-logs false
+Appending Selenium option: --structured-logs false
+Appending Selenium option: --reject-unsupported-caps false
+Appending Selenium option: --session-request-timeout 300000
+Appending Selenium option: --session-retry-interval 15
+Appending Selenium option: --healthcheck-interval 120
+Appending Selenium option: --relax-checks true
+Appending Selenium option: --bind-host false
+Appending Selenium option: --config /opt/selenium/config.toml
+Appending Selenium option: --tracing false
+Tracing is disabled
+Using JAVA_OPTS: -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/selenium/logs  -Dwebdriver.remote.enableTracing=false -Dwebdriver.httpclient.version=HTTP_1_1
+Feb 14, 2025 3:47:44 PM org.openqa.selenium.grid.log.LoggingOptions getTracer
+INFO: Using null tracer
+Feb 14, 2025 3:47:45 PM org.openqa.selenium.events.zeromq.BoundZmqEventBus <init>
+INFO: XPUB binding to [binding to tcp://*:4442, advertising as tcp://10.0.144.109:4442], XSUB binding to [binding to tcp://*:4443, advertising as tcp://10.0.144.109:4443]
+Feb 14, 2025 3:47:45 PM org.openqa.selenium.events.zeromq.UnboundZmqEventBus <init>
+INFO: Connecting to tcp://10.0.144.109:4442 and tcp://10.0.144.109:4443
+Feb 14, 2025 3:47:45 PM org.openqa.selenium.events.zeromq.UnboundZmqEventBus <init>
+INFO: Sockets created
+Feb 14, 2025 3:47:46 PM org.openqa.selenium.events.zeromq.UnboundZmqEventBus <init>
+INFO: Event bus ready
+Feb 14, 2025 3:47:47 PM org.openqa.selenium.grid.commands.Hub execute
+INFO: Started Selenium Hub 4.28.1 (revision 73f5ad48a2): http://10.0.144.109:4444
+Feb 14, 2025 3:47:56 PM org.openqa.selenium.grid.node.Node <init>
+INFO: Binding additional locator mechanisms: relative
+Feb 14, 2025 3:47:57 PM org.openqa.selenium.grid.distributor.GridModel setAvailability
+INFO: Switching Node 383f9d3f-ffb0-4f45-83f6-bf6955b59aed (uri: http://10.0.144.170:5555) from DOWN to UP
+Feb 14, 2025 3:47:57 PM org.openqa.selenium.grid.distributor.local.LocalDistributor add
+INFO: Added node 383f9d3f-ffb0-4f45-83f6-bf6955b59aed at http://10.0.144.170:5555. Health check every 120s
+Feb 14, 2025 3:47:57 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:47:58 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: c3a08aee45ce147a0fe575fba358ded4
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.ujO5jm}, goog:chromeOptions: {debuggerAddress: localhost:37573}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:48:11 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id c3a08aee45ce147a0fe575fba358ded4
+Feb 14, 2025 3:48:11 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: c3a08aee45ce147a0fe575fba358ded4
+Feb 14, 2025 3:48:11 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:48:11 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: e68c82d4129b6f677f26d63b00e7afae
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.haymVi}, goog:chromeOptions: {debuggerAddress: localhost:45423}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:48:32 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: e68c82d4129b6f677f26d63b00e7afae
+Feb 14, 2025 3:48:32 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id e68c82d4129b6f677f26d63b00e7afae
+Feb 14, 2025 3:48:32 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 237d2b6b45123b0ca6aa41506993f3d4
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.IyQ4sc}, goog:chromeOptions: {debuggerAddress: localhost:36347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.node.Node <init>
+INFO: Binding additional locator mechanisms: relative
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.distributor.GridModel setAvailability
+INFO: Switching Node ebf20db9-6438-4055-8e76-7b4703903285 (uri: http://10.0.144.158:5555) from DOWN to UP
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.distributor.local.LocalDistributor add
+INFO: Added node ebf20db9-6438-4055-8e76-7b4703903285 at http://10.0.144.158:5555. Health check every 120s
+Feb 14, 2025 3:48:48 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 237d2b6b45123b0ca6aa41506993f3d4
+Feb 14, 2025 3:48:48 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 237d2b6b45123b0ca6aa41506993f3d4
+Feb 14, 2025 3:49:04 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:49:06 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: e88378b16a13a03cb672b9820a2c00d7
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.URslSz}, goog:chromeOptions: {debuggerAddress: localhost:36511}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:49:17 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: e88378b16a13a03cb672b9820a2c00d7
+Feb 14, 2025 3:49:17 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id e88378b16a13a03cb672b9820a2c00d7
+Feb 14, 2025 3:49:17 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:49:18 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 724101bbfa3ad28acf23b449d65d32e0
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.BWL7Ya}, goog:chromeOptions: {debuggerAddress: localhost:43279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:49:37 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 724101bbfa3ad28acf23b449d65d32e0
+Feb 14, 2025 3:49:37 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 724101bbfa3ad28acf23b449d65d32e0
+Feb 14, 2025 3:49:37 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:49:38 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 3c2663aaa1ed5ab799c16c0c438290cc
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.SNL4iU}, goog:chromeOptions: {debuggerAddress: localhost:40595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:49:53 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 3c2663aaa1ed5ab799c16c0c438290cc
+Feb 14, 2025 3:49:53 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 3c2663aaa1ed5ab799c16c0c438290cc
+Feb 14, 2025 3:50:18 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:50:19 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 28e532bea1aaa548ee7f58b6f319b9ae
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.FDJ7sj}, goog:chromeOptions: {debuggerAddress: localhost:35409}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:50:30 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 28e532bea1aaa548ee7f58b6f319b9ae
+Feb 14, 2025 3:50:30 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 28e532bea1aaa548ee7f58b6f319b9ae
+Feb 14, 2025 3:50:30 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:50:30 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 013e0f94e23732b0da9f6e5a36f981c4
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.lorZo6}, goog:chromeOptions: {debuggerAddress: localhost:39423}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:50:49 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 013e0f94e23732b0da9f6e5a36f981c4
+Feb 14, 2025 3:50:49 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 013e0f94e23732b0da9f6e5a36f981c4
+Feb 14, 2025 3:50:49 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:50:50 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 552f7b909aaddcfd98d03383695f75b0
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.UIwDX3}, goog:chromeOptions: {debuggerAddress: localhost:37485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:51:06 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 552f7b909aaddcfd98d03383695f75b0
+Feb 14, 2025 3:51:06 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 552f7b909aaddcfd98d03383695f75b0
+Feb 14, 2025 3:51:55 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:51:56 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 6d650b813016f37c944d0a9d497fd6b4
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.5fzDb8}, goog:chromeOptions: {debuggerAddress: localhost:36599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:52:07 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 6d650b813016f37c944d0a9d497fd6b4
+Feb 14, 2025 3:52:07 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 6d650b813016f37c944d0a9d497fd6b4
+Feb 14, 2025 3:52:07 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:52:07 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 0d85a92bd8e4223b5cb6b3c76d47e2ad
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.2wQgWS}, goog:chromeOptions: {debuggerAddress: localhost:33907}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:52:26 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 0d85a92bd8e4223b5cb6b3c76d47e2ad
+Feb 14, 2025 3:52:26 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 0d85a92bd8e4223b5cb6b3c76d47e2ad
+Feb 14, 2025 3:52:26 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:52:26 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: d79079a16a6f81fdfec362ee12663eac
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.e8eMb2}, goog:chromeOptions: {debuggerAddress: localhost:35241}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:52:42 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: d79079a16a6f81fdfec362ee12663eac
+Feb 14, 2025 3:52:42 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id d79079a16a6f81fdfec362ee12663eac
+Feb 14, 2025 3:54:13 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:54:14 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 1e02628992aa9ee203bb990d697e0fe7
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.piHiJg}, goog:chromeOptions: {debuggerAddress: localhost:45365}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:54:25 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 1e02628992aa9ee203bb990d697e0fe7
+Feb 14, 2025 3:54:25 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 1e02628992aa9ee203bb990d697e0fe7
+Feb 14, 2025 3:54:25 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:54:26 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: fb427fd6c9639ac5e0b97b75c878bf9e
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.sHioQK}, goog:chromeOptions: {debuggerAddress: localhost:34523}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:54:44 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: fb427fd6c9639ac5e0b97b75c878bf9e
+Feb 14, 2025 3:54:44 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id fb427fd6c9639ac5e0b97b75c878bf9e
+Feb 14, 2025 3:54:44 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:54:45 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: e1f2c97269907a34a578616e4ed3fecd
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.G7GPNJ}, goog:chromeOptions: {debuggerAddress: localhost:35137}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:55:01 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id e1f2c97269907a34a578616e4ed3fecd
+Feb 14, 2025 3:55:01 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: e1f2c97269907a34a578616e4ed3fecd
+Feb 14, 2025 3:57:20 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:57:21 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 638e135574687bd702a5fbdb97757b1a
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.VFsxv2}, goog:chromeOptions: {debuggerAddress: localhost:35137}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:57:32 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 638e135574687bd702a5fbdb97757b1a
+Feb 14, 2025 3:57:32 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 638e135574687bd702a5fbdb97757b1a
+Feb 14, 2025 3:57:32 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:57:32 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 300ec850366dd1e3622465d97001db74
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.LsIehK}, goog:chromeOptions: {debuggerAddress: localhost:45781}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:57:51 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 300ec850366dd1e3622465d97001db74
+Feb 14, 2025 3:57:51 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 300ec850366dd1e3622465d97001db74
+Feb 14, 2025 3:57:51 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:57:51 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 753903e80d3c9bc0abc8076c6d2c3684
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.TtXbzI}, goog:chromeOptions: {debuggerAddress: localhost:46107}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:58:08 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 753903e80d3c9bc0abc8076c6d2c3684
+Feb 14, 2025 3:58:08 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 753903e80d3c9bc0abc8076c6d2c3684
+Feb 14, 2025 3:58:10 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:58:11 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: a125d46fc577eb3954451992daabf9e5
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.AufO10}, goog:chromeOptions: {debuggerAddress: localhost:36993}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:58:23 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: a125d46fc577eb3954451992daabf9e5
+Feb 14, 2025 3:58:23 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id a125d46fc577eb3954451992daabf9e5
+Feb 14, 2025 3:58:23 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:58:23 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: c9944fb3e1b6b4d292562b41210e74bc
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.b5pbPW}, goog:chromeOptions: {debuggerAddress: localhost:39247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:58:42 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: c9944fb3e1b6b4d292562b41210e74bc
+Feb 14, 2025 3:58:42 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id c9944fb3e1b6b4d292562b41210e74bc
+Feb 14, 2025 3:58:42 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:58:43 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 60704ae05d711fbc9ba3f41f4789089f
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.SJVXqA}, goog:chromeOptions: {debuggerAddress: localhost:41761}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:58:58 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 60704ae05d711fbc9ba3f41f4789089f
+Feb 14, 2025 3:58:58 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 60704ae05d711fbc9ba3f41f4789089f
+Feb 14, 2025 3:59:13 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:59:14 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 340c752080186eb78ab2cd505f4dc9a6
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.G76rRk}, goog:chromeOptions: {debuggerAddress: localhost:33479}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:59:25 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 340c752080186eb78ab2cd505f4dc9a6
+Feb 14, 2025 3:59:25 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 340c752080186eb78ab2cd505f4dc9a6
+Feb 14, 2025 3:59:25 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:59:25 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: bc86c99e112f986f3a3aa1a603156530
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.7Sykjh}, goog:chromeOptions: {debuggerAddress: localhost:34945}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:59:43 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: bc86c99e112f986f3a3aa1a603156530
+Feb 14, 2025 3:59:43 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id bc86c99e112f986f3a3aa1a603156530
+Feb 14, 2025 3:59:43 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 3:59:44 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 3f2fd103500b30410638eaa791b661e1
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.NdvoAb}, goog:chromeOptions: {debuggerAddress: localhost:38461}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:00:04 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 3f2fd103500b30410638eaa791b661e1
+Feb 14, 2025 4:00:04 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 3f2fd103500b30410638eaa791b661e1
+Feb 14, 2025 4:00:31 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:00:32 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 2799075620e99d1ca324bef3bab7b121
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.SmEQ0S}, goog:chromeOptions: {debuggerAddress: localhost:34687}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:00:43 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 2799075620e99d1ca324bef3bab7b121
+Feb 14, 2025 4:00:43 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 2799075620e99d1ca324bef3bab7b121
+Feb 14, 2025 4:00:43 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:00:44 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 50ea4ff511a2a06e765a2da4ba11e24e
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.NsdgXN}, goog:chromeOptions: {debuggerAddress: localhost:38747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:01:03 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 50ea4ff511a2a06e765a2da4ba11e24e
+Feb 14, 2025 4:01:03 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 50ea4ff511a2a06e765a2da4ba11e24e
+Feb 14, 2025 4:01:03 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:01:04 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 9ba58e9a86b9e63f35ff0819baa4806c
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.dZfYiG}, goog:chromeOptions: {debuggerAddress: localhost:38507}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:01:20 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 9ba58e9a86b9e63f35ff0819baa4806c
+Feb 14, 2025 4:01:20 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 9ba58e9a86b9e63f35ff0819baa4806c
+Feb 14, 2025 4:02:10 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:02:11 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 83360c81d6e42ba250423c8c4c698d77
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.GX0DWj}, goog:chromeOptions: {debuggerAddress: localhost:42143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:02:22 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 83360c81d6e42ba250423c8c4c698d77
+Feb 14, 2025 4:02:22 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 83360c81d6e42ba250423c8c4c698d77
+Feb 14, 2025 4:02:22 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:02:22 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 45efcabb75759fffba8a587f59e12984
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.EUaz8r}, goog:chromeOptions: {debuggerAddress: localhost:40207}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:02:41 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 45efcabb75759fffba8a587f59e12984
+Feb 14, 2025 4:02:41 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 45efcabb75759fffba8a587f59e12984
+Feb 14, 2025 4:02:41 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:02:41 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 90488a0769a04393d678a7a5add02bb6
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.1E0QWS}, goog:chromeOptions: {debuggerAddress: localhost:37313}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:02:54 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 90488a0769a04393d678a7a5add02bb6
+Feb 14, 2025 4:02:54 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 90488a0769a04393d678a7a5add02bb6
+Feb 14, 2025 4:04:27 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:04:28 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 7b46c396493cf15aa0372d0ea0eae292
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.fUiRIC}, goog:chromeOptions: {debuggerAddress: localhost:37467}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:04:38 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 7b46c396493cf15aa0372d0ea0eae292
+Feb 14, 2025 4:04:38 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 7b46c396493cf15aa0372d0ea0eae292
+Feb 14, 2025 4:04:38 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:04:39 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 53cb9524d503d2494faf7c98340211d4
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.Mrvg7n}, goog:chromeOptions: {debuggerAddress: localhost:33845}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:04:57 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id 53cb9524d503d2494faf7c98340211d4
+Feb 14, 2025 4:04:57 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: 53cb9524d503d2494faf7c98340211d4
+Feb 14, 2025 4:04:57 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:04:58 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: c5ba1253c9044f040165c28b59f96fda
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.BhOwjS}, goog:chromeOptions: {debuggerAddress: localhost:43691}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:05:13 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: c5ba1253c9044f040165c28b59f96fda
+Feb 14, 2025 4:05:13 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id c5ba1253c9044f040165c28b59f96fda
+Feb 14, 2025 4:08:07 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:08:08 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: baec85e7489c1f34ce87f2a39db1f633
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.loyzyU}, goog:chromeOptions: {debuggerAddress: localhost:44553}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:08:20 PM org.openqa.selenium.grid.sessionmap.local.LocalSessionMap remove
+INFO: Deleted session from local Session Map, Id: baec85e7489c1f34ce87f2a39db1f633
+Feb 14, 2025 4:08:20 PM org.openqa.selenium.grid.distributor.GridModel release
+INFO: Releasing slot for session id baec85e7489c1f34ce87f2a39db1f633
+Feb 14, 2025 4:08:20 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session request received by the Distributor:
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --disable-blink-features=Au..., --window-size=1920,1080], extensions: []}, pageLoadStrategy: normal}]
+Feb 14, 2025 4:08:20 PM org.openqa.selenium.grid.distributor.local.LocalDistributor newSession
+INFO: Session created by the Distributor. Id: 79d410afece80c32545a75a9bef4452f
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.W6T8Vx}, goog:chromeOptions: {debuggerAddress: localhost:33067}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.0.144.170:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.170:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.170:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}

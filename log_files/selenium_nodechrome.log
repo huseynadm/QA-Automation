@@ -1,0 +1,138 @@
+2025-02-14 15:48:28,402 INFO Included extra file "/etc/supervisor/conf.d/chrome-cleanup.conf" during parsing
+2025-02-14 15:48:28,403 INFO Included extra file "/etc/supervisor/conf.d/recorder.conf" during parsing
+2025-02-14 15:48:28,403 INFO Included extra file "/etc/supervisor/conf.d/selenium.conf" during parsing
+2025-02-14 15:48:28,403 INFO Included extra file "/etc/supervisor/conf.d/uploader.conf" during parsing
+2025-02-14 15:48:28,410 INFO RPC interface 'supervisor' initialized
+2025-02-14 15:48:28,410 INFO supervisord started with pid 8
+2025-02-14 15:48:29,414 INFO spawned: 'xvfb' with pid 9
+2025-02-14 15:48:29,421 INFO spawned: 'vnc' with pid 10
+2025-02-14 15:48:29,425 INFO spawned: 'novnc' with pid 11
+2025-02-14 15:48:29,429 INFO spawned: 'selenium-node' with pid 12
+2025-02-14 15:48:29,552 INFO success: selenium-node entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+Appending Selenium option: --heartbeat-period 30
+Appending Selenium option: --log-level INFO
+Appending Selenium option: --http-logs false
+Appending Selenium option: --structured-logs false
+Generating Selenium Config
+Configuring server...
+Setting up SE_NODE_HOST...
+Setting up SE_NODE_PORT...
+Setting up SE_NODE_GRID_URL...
+Appending Selenium option: --tracing false
+Tracing is disabled
+Appending Selenium option: --bind-host false
+Appending Selenium option: --config /opt/selenium/config.toml
+Selenium Grid Node configuration:
+[events]
+publish = "tcp://selenium-hub:4442"
+subscribe = "tcp://selenium-hub:4443"
+
+[node]
+session-timeout = 300
+override-max-sessions = false
+detect-drivers = false
+drain-after-session-count = 0
+max-sessions = 1
+
+[[node.driver-configuration]]
+display-name = "chrome"
+stereotype = '{"browserName": "chrome", "browserVersion": "97.0", "platformName": "Linux", "goog:chromeOptions": {"binary": "/usr/bin/google-chrome"}, "se:containerName": "selenium-node-chrome-59d698f67-76g42", "container:hostname": "selenium-node-chrome-59d698f67-76g42"}'
+max-sessions = 1
+
+Starting Selenium Grid Node...
+Using JAVA_OPTS: -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/selenium/logs  -Dwebdriver.remote.enableTracing=false -Dwebdriver.httpclient.version=HTTP_1_1
+2025-02-14 15:48:30,414 INFO success: xvfb entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-14 15:48:30,519 INFO success: vnc entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-14 15:48:30,519 INFO success: novnc entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Feb 14, 2025 3:48:31 PM org.openqa.selenium.grid.log.LoggingOptions getTracer
+INFO: Using null tracer
+Feb 14, 2025 3:48:32 PM org.openqa.selenium.events.zeromq.UnboundZmqEventBus <init>
+INFO: Connecting to tcp://selenium-hub:4442 and tcp://selenium-hub:4443
+Feb 14, 2025 3:48:32 PM org.openqa.selenium.events.zeromq.UnboundZmqEventBus <init>
+INFO: Sockets created
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.events.zeromq.UnboundZmqEventBus <init>
+INFO: Event bus ready
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.grid.node.httpd.NodeServer createHandlers
+INFO: Reporting self as: http://10.0.144.158:5555
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.grid.log.LoggingOptions getTracer
+INFO: Using null tracer
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.grid.node.config.NodeOptions getSessionFactories
+INFO: Detected 1 available processors
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.grid.node.config.NodeOptions report
+INFO: Adding chrome for {"browserName": "chrome","browserVersion": "97.0","container:hostname": "selenium-node-chrome-59d698f67-76g42","goog:chromeOptions": {"binary": "\u002fusr\u002fbin\u002fgoogle-chrome"},"platformName": "linux","se:containerName": "selenium-node-chrome-59d698f67-76g42","se:noVncPort": 7900,"se:vncEnabled": true} 1 times
+Feb 14, 2025 3:48:33 PM org.openqa.selenium.grid.node.Node <init>
+INFO: Binding additional locator mechanisms: relative
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.node.httpd.NodeServer$2 start
+INFO: Starting registration process for Node http://10.0.144.158:5555
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.node.httpd.NodeServer execute
+INFO: Started Selenium node 4.28.1 (revision 73f5ad48a2): http://10.0.144.158:5555
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.node.httpd.NodeServer$2 lambda$start$1
+INFO: Sending registration event...
+Feb 14, 2025 3:48:34 PM org.openqa.selenium.grid.node.httpd.NodeServer lambda$createHandlers$2
+INFO: Node has been added
+Feb 14, 2025 3:49:06 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: e88378b16a13a03cb672b9820a2c00d7, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.URslSz}, goog:chromeOptions: {debuggerAddress: localhost:36511}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:49:17 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session e88378b16a13a03cb672b9820a2c00d7
+Feb 14, 2025 3:49:37 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 3c2663aaa1ed5ab799c16c0c438290cc, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.SNL4iU}, goog:chromeOptions: {debuggerAddress: localhost:40595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:49:53 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 3c2663aaa1ed5ab799c16c0c438290cc
+Feb 14, 2025 3:50:30 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 013e0f94e23732b0da9f6e5a36f981c4, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.lorZo6}, goog:chromeOptions: {debuggerAddress: localhost:39423}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:50:49 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 013e0f94e23732b0da9f6e5a36f981c4
+Feb 14, 2025 3:51:56 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 6d650b813016f37c944d0a9d497fd6b4, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.5fzDb8}, goog:chromeOptions: {debuggerAddress: localhost:36599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:52:07 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 6d650b813016f37c944d0a9d497fd6b4
+Feb 14, 2025 3:52:26 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: d79079a16a6f81fdfec362ee12663eac, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.e8eMb2}, goog:chromeOptions: {debuggerAddress: localhost:35241}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:52:42 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session d79079a16a6f81fdfec362ee12663eac
+Feb 14, 2025 3:54:26 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: fb427fd6c9639ac5e0b97b75c878bf9e, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.sHioQK}, goog:chromeOptions: {debuggerAddress: localhost:34523}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:54:44 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session fb427fd6c9639ac5e0b97b75c878bf9e
+Feb 14, 2025 3:57:21 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 638e135574687bd702a5fbdb97757b1a, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.VFsxv2}, goog:chromeOptions: {debuggerAddress: localhost:35137}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:57:32 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 638e135574687bd702a5fbdb97757b1a
+Feb 14, 2025 3:57:51 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 753903e80d3c9bc0abc8076c6d2c3684, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.TtXbzI}, goog:chromeOptions: {debuggerAddress: localhost:46107}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:58:08 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 753903e80d3c9bc0abc8076c6d2c3684
+Feb 14, 2025 3:58:23 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: c9944fb3e1b6b4d292562b41210e74bc, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.b5pbPW}, goog:chromeOptions: {debuggerAddress: localhost:39247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:58:42 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session c9944fb3e1b6b4d292562b41210e74bc
+Feb 14, 2025 3:59:14 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 340c752080186eb78ab2cd505f4dc9a6, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.G76rRk}, goog:chromeOptions: {debuggerAddress: localhost:33479}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 3:59:25 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 340c752080186eb78ab2cd505f4dc9a6
+Feb 14, 2025 3:59:44 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 3f2fd103500b30410638eaa791b661e1, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.NdvoAb}, goog:chromeOptions: {debuggerAddress: localhost:38461}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:00:04 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 3f2fd103500b30410638eaa791b661e1
+Feb 14, 2025 4:00:44 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 50ea4ff511a2a06e765a2da4ba11e24e, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.NsdgXN}, goog:chromeOptions: {debuggerAddress: localhost:38747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:01:03 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 50ea4ff511a2a06e765a2da4ba11e24e
+Feb 14, 2025 4:02:11 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 83360c81d6e42ba250423c8c4c698d77, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.GX0DWj}, goog:chromeOptions: {debuggerAddress: localhost:42143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:02:22 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 83360c81d6e42ba250423c8c4c698d77
+Feb 14, 2025 4:02:41 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 90488a0769a04393d678a7a5add02bb6, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.1E0QWS}, goog:chromeOptions: {debuggerAddress: localhost:37313}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:02:54 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 90488a0769a04393d678a7a5add02bb6
+Feb 14, 2025 4:04:39 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: 53cb9524d503d2494faf7c98340211d4, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.Mrvg7n}, goog:chromeOptions: {debuggerAddress: localhost:33845}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:04:57 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session 53cb9524d503d2494faf7c98340211d4
+Feb 14, 2025 4:08:08 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: baec85e7489c1f34ce87f2a39db1f633, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.loyzyU}, goog:chromeOptions: {debuggerAddress: localhost:44553}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Feb 14, 2025 4:08:20 PM org.openqa.selenium.grid.node.local.SessionSlot stop
+INFO: Stopping session baec85e7489c1f34ce87f2a39db1f633
+Feb 14, 2025 4:08:39 PM org.openqa.selenium.grid.node.local.LocalNode newSession
+INFO: Session created by the Node. Id: ae8999f6674a5b5f50187bb04c536857, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /tmp/.com.google.Chrome.7nx0t4}, goog:chromeOptions: {debuggerAddress: localhost:36567}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.0.144.158:4444/sess..., se:cdpVersion: 97.0.4692.99, se:containerName: selenium-node-chrome-59d698..., se:noVncPort: 7900, se:vnc: ws://10.0.144.158:4444/sess..., se:vncEnabled: true, se:vncLocalAddress: ws://10.0.144.158:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}

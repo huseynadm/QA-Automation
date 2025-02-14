@@ -1,0 +1,8 @@
+✅ TEST 1 PASSED: Homepage loaded successfully
+✅ TEST 2 PASSED: Careers page loaded successfully
+✅ TEST 3 PASSED:  Cookie consent accepted and QA Jobs Loaded successfully
+✅ TEST 4 PASSED: Location filter applied successfully
+✅ Cursor moved to the element
+ℹ️ View Role button URL: https://jobs.lever.co/useinsider/78ddbec0-16bf-4eab-b5a6-04facb993ddc
+✅ Opened the View Role URL in a new tab
+✅ TEST 5 PASSED: View Role button opened the correct URL
