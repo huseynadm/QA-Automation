@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: selenium-node-chrome
 spec:
-  replicas: 1
+  replicas: 1  
   selector:
     matchLabels:
       app: selenium-node-chrome
@@ -23,6 +23,15 @@ spec:
               value: "4442"
             - name: SE_EVENT_BUS_SUBSCRIBE_PORT
               value: "4443"
+          ports:
+            - containerPort: 5555
+          resources:
+            requests:
+              cpu: "100m"  
+              memory: "128Mi"  
+            limits:
+              cpu: "200m"  
+              memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service
@@ -36,3 +45,28 @@ spec:
       port: 5555
       targetPort: 5555
   type: ClusterIP
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: selenium-node-chrome-autoscaler
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: selenium-node-chrome
+  minReplicas: 1  
+  maxReplicas: 5  
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70 
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 70
